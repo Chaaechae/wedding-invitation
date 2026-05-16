@@ -51,7 +51,7 @@ export const Contact = () => {
     <DetailLayout
       title="Contact Information"
       subtitle="연락처 / 계좌정보"
-      accent="var(--pink-deep)"
+      accent="var(--orange-deep)"
     >
       <Group heading="신랑측" rows={GROOM_INFO} />
       <Group heading="신부측" rows={BRIDE_INFO} />

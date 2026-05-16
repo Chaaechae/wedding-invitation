@@ -1,8 +1,7 @@
 {
   "name": "wedding-invitation",
   "version": "0.1.0",
-  "description": "A wedding invitation web page template",
-  "author": "Ju Ho Nam <jhnamnam@gmail.com> (https://juhonamnam.github.io/)",
+  "description": "해성 ❤️ 채원 — 모바일 청첩장",
   "license": "MIT",
   "private": true,
   "homepage": "https://chaaechae.github.io/wedding-invitation",
@@ -23,8 +22,7 @@
     "sass": "^1.89.2",
     "typescript": "^4.4.2",
     "vite": "^7.0.4",
-    "vite-plugin-html": "^3.2.2",
-    "vite-plugin-svgr": "^4.5.0"
+    "vite-plugin-html": "^3.2.2"
   },
   "browserslist": {
     "production": [

@@ -18,14 +18,14 @@ const weddingInfoCards: Card[] = [
     title: "예식장 정보",
     subtitle: "Venue & Time",
     emoji: "💒",
-    bg: "linear-gradient(135deg, #ffd6e1 0%, #f4a5b8 100%)",
+    bg: "linear-gradient(135deg, #cfe7f3 0%, #9dd0e8 100%)",
     href: "#/venue",
   },
   {
     title: "예식장 메뉴",
     subtitle: "Menu",
     emoji: "🍽️",
-    bg: "linear-gradient(135deg, #fde2dc 0%, #ffb4a2 100%)",
+    bg: "linear-gradient(135deg, #ffe2c8 0%, #ffb47a 100%)",
     href: "#/menu",
   },
 ]
@@ -35,14 +35,14 @@ const peopleCards: Card[] = [
     title: "Wedding Gallery",
     subtitle: "사진",
     emoji: "📷",
-    bg: "linear-gradient(135deg, #e8d8f0 0%, #c5a8d8 100%)",
+    bg: "linear-gradient(135deg, #fdf2e2 0%, #f4d8b0 100%)",
     href: "#/gallery",
   },
   {
     title: "Our Story",
     subtitle: "우리 이야기",
     emoji: "💗",
-    bg: "linear-gradient(135deg, #ffeef3 0%, #ffc8d8 100%)",
+    bg: "linear-gradient(135deg, #eaf4fa 0%, #b8dff0 100%)",
     href: "#/story",
   },
 ]
@@ -52,7 +52,7 @@ const contactCards: Card[] = [
     title: "Contact Information",
     subtitle: "연락처 / 계좌정보",
     emoji: "💌",
-    bg: "linear-gradient(135deg, #fde2dc 0%, #f4a5b8 100%)",
+    bg: "linear-gradient(135deg, #fff4ea 0%, #ffd2b3 100%)",
     href: "#/contact",
   },
 ]

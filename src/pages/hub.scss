@@ -20,8 +20,8 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--pink-cream);
-    color: var(--pink-deep);
+    background: var(--orange-cream);
+    color: var(--orange-deep);
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@
     transition: background 0.15s;
 
     &:active {
-      background: var(--pink-soft);
+      background: var(--orange-soft);
     }
 
     &--ghost {
@@ -44,7 +44,7 @@
 
   &__title-script {
     font-size: 1.4rem;
-    color: var(--pink-deep);
+    color: var(--orange-deep);
     margin: 0;
   }
 

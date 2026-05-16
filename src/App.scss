@@ -3,16 +3,23 @@
 @use "./pages/details/detail";
 
 :root {
-  --pink-deep: #ff6fa0;
-  --pink-mid: #f4a5b8;
-  --pink-soft: #ffd6e1;
-  --pink-cream: #ffeef3;
-  --lilac: #b8b5e0;
-  --lilac-soft: #d4c8e6;
-  --cloud-warm: #fde2dc;
-  --ink: #2a2a3a;
-  --ink-soft: #6c6c80;
-  --line: #ececf4;
+  --sky-mist: #eaf4fa;
+  --sky-soft: #cfe7f3;
+  --sky-mid: #9dd0e8;
+  --sky-deep: #5fb3d4;
+
+  --orange-cream: #fff4ea;
+  --orange-soft: #ffd2b3;
+  --orange-mid: #ffb47a;
+  --orange-deep: #ff8c47;
+
+  --paper-warm: #fdf6e3;
+  --paper-mid: #f4ead0;
+  --paper-shadow: #e0d3b5;
+
+  --ink: #2a3540;
+  --ink-soft: #6c7a86;
+  --line: #e6ecf0;
 
   font-family: "MapoGoldenPier", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
@@ -24,7 +31,7 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  background: var(--pink-cream);
+  background: var(--sky-mist);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--ink);

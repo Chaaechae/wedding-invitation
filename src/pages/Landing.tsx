@@ -10,47 +10,43 @@ const goHub = () => {
 
 export const Landing = () => {
   return (
-    <div className="app-shell landing">
+    <div className="app-shell landing" onClick={goHub} role="button">
       <div className="landing__sky" />
-      <div className="landing__clouds landing__clouds--back" />
-      <div className="landing__clouds landing__clouds--front" />
+      <div className="landing__cloud landing__cloud--top" />
+      <div className="landing__cloud landing__cloud--bottom" />
 
       <header className="landing__header">
-        <span className="landing__script-small script">our</span>
-        <span className="landing__script-large script">wedding</span>
+        <p className="landing__kicker">you&apos;re invited to</p>
       </header>
 
       <div className="landing__stage">
-        <div className="laptop" onClick={goHub} role="button" tabIndex={0}>
-          <div className="laptop__lid">
-            <div className="laptop__screen">
-              <div className="laptop__waves" />
-              <button className="enter-pill" onClick={goHub}>
-                <span>enter</span>
-              </button>
-            </div>
+        <div className="envelope">
+          <div className="envelope__flap" />
+          <div className="envelope__card">
+            <p className="envelope__top script">our</p>
+            <p className="envelope__title script">the new chapter</p>
+            <span className="envelope__divider" />
+            <p className="envelope__names">
+              {GROOM_FIRSTNAME} <span>&amp;</span> {BRIDE_FIRSTNAME}
+            </p>
           </div>
-          <div className="laptop__hinge" />
-          <div className="laptop__base">
-            <div className="laptop__keyboard" />
-            <div className="laptop__trackpad" />
+          <div className="envelope__body">
+            <div className="envelope__fold envelope__fold--left" />
+            <div className="envelope__fold envelope__fold--right" />
           </div>
         </div>
       </div>
 
       <div className="landing__caption">
-        <h1>From this day, forever</h1>
-        <p className="landing__tagline">
-          {GROOM_FIRSTNAME} &amp; {BRIDE_FIRSTNAME} are getting married
-          <span className="landing__cloud-icon">☁️</span>
-        </p>
         <p className="landing__date">
-          {WEDDING_DATE.format("YYYY. MM. DD")} ·{" "}
-          {WEDDING_DATE.format("dddd")}
+          {WEDDING_DATE.format("YYYY. MM. DD")}
+        </p>
+        <p className="landing__date-sub">
+          {WEDDING_DATE.format("dddd · A h:mm")}
         </p>
       </div>
 
-      <div className="landing__tap-hint">tap to enter</div>
+      <div className="landing__tap-hint">tap to open</div>
     </div>
   )
 }

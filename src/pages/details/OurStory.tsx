@@ -8,12 +8,19 @@ const timeline = [
   { date: "2026. 09. 12", label: "결혼" },
 ]
 
-type City = { id: string; name: string; emoji: string }
+type City = { id: string; name: string; emoji: string; photos: string[] }
+
+const BASE = import.meta.env.BASE_URL
 
 const pastTrips: City[] = [
-  { id: "tokyo", name: "도쿄", emoji: "🗼" },
-  { id: "shanghai", name: "상하이", emoji: "🏙️" },
-  { id: "newyork", name: "뉴욕", emoji: "🗽" },
+  { id: "tokyo", name: "도쿄", emoji: "🗼", photos: [] },
+  {
+    id: "shanghai",
+    name: "상하이",
+    emoji: "🏙️",
+    photos: [`${BASE}gallery/shanghai_1.jpeg`, `${BASE}gallery/shanghai_2.jpeg`],
+  },
+  { id: "newyork", name: "뉴욕", emoji: "🗽", photos: [] },
 ]
 
 const futureTrips = ["칠레 🇨🇱", "덴마크 🇩🇰", "터키 🇹🇷", "그리고 전세계 어디든"]
@@ -80,18 +87,31 @@ export const OurStory = () => {
           ))}
         </div>
 
-        {openCity && (
-          <div className="travel-photos">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="travel-photos__cell">
-                <span>{pastTrips.find((c) => c.id === openCity)?.emoji}</span>
+        {openCity &&
+          (() => {
+            const city = pastTrips.find((c) => c.id === openCity)
+            if (!city) return null
+            return (
+              <div className="travel-photos">
+                {city.photos.length > 0
+                  ? city.photos.map((src, i) => (
+                      <div key={i} className="travel-photos__cell">
+                        <img src={src} alt={`${city.name} ${i + 1}`} />
+                      </div>
+                    ))
+                  : Array.from({ length: 3 }).map((_, i) => (
+                      <div key={i} className="travel-photos__cell">
+                        <span>{city.emoji}</span>
+                      </div>
+                    ))}
+                {city.photos.length === 0 && (
+                  <p className="travel-photos__note">
+                    사진은 곧 업로드 됩니다 📷
+                  </p>
+                )}
               </div>
-            ))}
-            <p className="travel-photos__note">
-              사진은 곧 업로드 됩니다 📷
-            </p>
-          </div>
-        )}
+            )
+          })()}
       </div>
 
       <div className="travel-card travel-card--accent">

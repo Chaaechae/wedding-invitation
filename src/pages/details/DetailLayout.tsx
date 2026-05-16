@@ -10,7 +10,7 @@ type Props = {
 export const DetailLayout = ({
   title,
   subtitle,
-  accent = "var(--pink-deep)",
+  accent = "var(--orange-deep)",
   children,
 }: Props) => {
   return (
