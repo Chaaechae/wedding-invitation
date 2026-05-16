@@ -4,6 +4,7 @@ import { Landing } from "./pages/Landing"
 import { Hub } from "./pages/Hub"
 import { VenueInfo } from "./pages/details/VenueInfo"
 import { VenueMenu } from "./pages/details/VenueMenu"
+import { Gallery } from "./pages/details/Gallery"
 import { OurStory } from "./pages/details/OurStory"
 import { Contact } from "./pages/details/Contact"
 
@@ -31,6 +32,8 @@ function App() {
       return <VenueInfo />
     case "menu":
       return <VenueMenu />
+    case "gallery":
+      return <Gallery />
     case "story":
       return <OurStory />
     case "contact":

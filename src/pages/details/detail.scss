@@ -182,4 +182,95 @@
     text-align: center;
     border: 1px dashed var(--line);
   }
+
+  &__section-label {
+    margin: 1.75rem 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+
+  &__note {
+    margin: 1rem 0 0;
+    padding: 0.9rem 1rem;
+    background: var(--pink-cream);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: var(--ink);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &__account-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid var(--line);
+    gap: 0.75rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__account-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__account-relation {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+  }
+
+  &__account-detail {
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-top: 0.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__copy-btn {
+    background: var(--pink-cream);
+    color: var(--pink-deep);
+    font-size: 0.75rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+
+    &:active {
+      background: var(--pink-soft);
+    }
+  }
+}
+
+.gallery-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+
+  &__cell {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, #f4f0f6 0%, #e8e2ec 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__placeholder {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
 }
