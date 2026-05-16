@@ -1,53 +1,44 @@
-import { Cover } from "./component/cover"
-import { Location } from "./component/location"
+import { useEffect, useState } from "react"
 import "./App.scss"
-import { BGEffect } from "./component/bgEffect"
-import { Invitation } from "./component/invitation"
-import { Calendar } from "./component/calendar"
-import { Gallery } from "./component/gallery"
-import { Information } from "./component/information"
-import { GuestBook } from "./component/guestbook"
-import { LazyDiv } from "./component/lazyDiv"
-import { ShareButton } from "./component/shareButton"
-import { STATIC_ONLY } from "./env"
+import { Landing } from "./pages/Landing"
+import { Hub } from "./pages/Hub"
+import { VenueInfo } from "./pages/details/VenueInfo"
+import { VenueMenu } from "./pages/details/VenueMenu"
+import { OurStory } from "./pages/details/OurStory"
+import { Contact } from "./pages/details/Contact"
+
+const parseRoute = () => {
+  const hash = window.location.hash.replace(/^#\/?/, "")
+  return hash || "landing"
+}
 
 function App() {
-  return (
-    <div className="background">
-      <BGEffect />
-      <div className="card-view">
-        <LazyDiv className="card-group">
-          {/* 표지 */}
-          <Cover />
+  const [route, setRoute] = useState<string>(parseRoute)
 
-          {/* 모시는 글 */}
-          <Invitation />
-        </LazyDiv>
+  useEffect(() => {
+    const handler = () => {
+      setRoute(parseRoute())
+      window.scrollTo({ top: 0 })
+    }
+    window.addEventListener("hashchange", handler)
+    return () => window.removeEventListener("hashchange", handler)
+  }, [])
 
-        <LazyDiv className="card-group">
-          {/* 결혼식 날짜 (달력) */}
-          <Calendar />
-
-          {/* 겔러리 */}
-          <Gallery />
-        </LazyDiv>
-
-        <LazyDiv className="card-group">
-          {/* 오시는길 */}
-          <Location />
-        </LazyDiv>
-
-        <LazyDiv className="card-group">
-          {/* 마음 전하기 */}
-          <Information />
-          {/* 방명록 */}
-          {!STATIC_ONLY && <GuestBook />}
-        </LazyDiv>
-
-        <ShareButton />
-      </div>
-    </div>
-  )
+  switch (route) {
+    case "hub":
+      return <Hub />
+    case "venue":
+      return <VenueInfo />
+    case "menu":
+      return <VenueMenu />
+    case "story":
+      return <OurStory />
+    case "contact":
+      return <Contact />
+    case "landing":
+    default:
+      return <Landing />
+  }
 }
 
 export default App
