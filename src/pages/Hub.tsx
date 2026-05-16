@@ -50,7 +50,7 @@ const peopleCards: Card[] = [
 const contactCards: Card[] = [
   {
     title: "Contact Information",
-    subtitle: "연락처 · 마음 전하기 · 화환 안내",
+    subtitle: "연락처 / 계좌정보",
     emoji: "💌",
     bg: "linear-gradient(135deg, #fde2dc 0%, #f4a5b8 100%)",
     href: "#/contact",

@@ -253,6 +253,367 @@
   }
 }
 
+/* merged contact + account row */
+.detail__merged-row {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.detail__merged-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail__merged-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail__merged-relation {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.1em;
+}
+
+.detail__merged-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 0.1rem;
+}
+
+.detail__merged-account {
+  margin-top: 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--pink-cream);
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  gap: 0.5rem;
+
+  .detail__account-detail {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    color: var(--ink);
+  }
+}
+
+/* timeline */
+.timeline {
+  margin: 0.5rem 0.5rem 0;
+  position: relative;
+  padding-left: 2.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+    bottom: 0.8rem;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      #f4a5b8 0%,
+      #c5a8d8 50%,
+      #a378c9 100%
+    );
+    border-radius: 2px;
+  }
+
+  &__item {
+    position: relative;
+    padding: 0.6rem 0;
+  }
+
+  &__dot {
+    position: absolute;
+    left: -1.8rem;
+    top: 0.65rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--pink-deep);
+    box-shadow: 0 0 0 4px rgba(255, 111, 160, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--pink-deep);
+
+    &[data-last="true"] {
+      background: var(--pink-deep);
+      color: #fff;
+      border-color: var(--pink-deep);
+    }
+  }
+
+  &__date {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+  }
+
+  &__label {
+    margin: 0.15rem 0 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+}
+
+/* link card */
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 1.5rem 0.25rem 0;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(135deg, #f3e8f9 0%, #e8d8f0 100%);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(163, 120, 201, 0.15);
+  transition: transform 0.15s;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  &__subtitle {
+    margin: 0.15rem 0 0;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+  }
+
+  &__chevron {
+    font-size: 1.1rem;
+    color: #a378c9;
+    flex-shrink: 0;
+  }
+}
+
+/* travel cards */
+.travel-card {
+  margin: 1rem 0.25rem 0;
+  padding: 1.1rem 1.2rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  &--accent {
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe6d6 100%);
+  }
+
+  &__headline {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  &__desc {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+}
+
+.travel-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.travel-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--pink-cream);
+  color: var(--ink);
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+
+  &__emoji {
+    font-size: 1rem;
+  }
+
+  &--active {
+    background: var(--pink-deep);
+    color: #fff;
+    transform: scale(1.02);
+  }
+}
+
+.travel-photos {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+
+  &__cell {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, #fde8ee 0%, #f4d8e0 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  &__note {
+    grid-column: 1 / -1;
+    margin: 0.5rem 0 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+  }
+}
+
+.travel-list {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  &__item {
+    background: #f8f5fc;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--ink);
+  }
+}
+
+/* interview (about page) */
+.interview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 1rem 0.25rem 0;
+
+  &__intro {
+    margin: 1.5rem 0.5rem 0;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  &__col {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.1rem 0.85rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    text-align: center;
+
+    &--groom {
+      background: linear-gradient(180deg, #f0f6ff 0%, #fafcff 100%);
+    }
+    &--bride {
+      background: linear-gradient(180deg, #fff0f5 0%, #fffafc 100%);
+    }
+  }
+
+  &__mic {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__by {
+    margin: 0;
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  &__name {
+    margin: 0.2rem 0 0.9rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    font-family: "Allura", "MapoGoldenPier", serif;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  &__qa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    text-align: left;
+  }
+
+  &__qa {
+    border-top: 1px dashed var(--line);
+    padding-top: 0.55rem;
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  &__q {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--pink-deep);
+    letter-spacing: 0.05em;
+  }
+
+  &__a {
+    margin: 0.25rem 0 0;
+    font-size: 0.85rem;
+    color: var(--ink);
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+}
+
 .gallery-grid {
   margin-top: 1.5rem;
   display: grid;

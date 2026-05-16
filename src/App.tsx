@@ -6,6 +6,7 @@ import { VenueInfo } from "./pages/details/VenueInfo"
 import { VenueMenu } from "./pages/details/VenueMenu"
 import { Gallery } from "./pages/details/Gallery"
 import { OurStory } from "./pages/details/OurStory"
+import { About } from "./pages/details/About"
 import { Contact } from "./pages/details/Contact"
 
 const parseRoute = () => {
@@ -36,6 +37,8 @@ function App() {
       return <Gallery />
     case "story":
       return <OurStory />
+    case "about":
+      return <About />
     case "contact":
       return <Contact />
     case "landing":
