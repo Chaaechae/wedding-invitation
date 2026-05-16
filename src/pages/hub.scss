@@ -79,6 +79,10 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    &--single {
+      justify-content: center;
+    }
   }
 
   &__card {

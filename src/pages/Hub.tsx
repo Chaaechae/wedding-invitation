@@ -32,17 +32,27 @@ const weddingInfoCards: Card[] = [
 
 const peopleCards: Card[] = [
   {
+    title: "Wedding Gallery",
+    subtitle: "사진",
+    emoji: "📷",
+    bg: "linear-gradient(135deg, #e8d8f0 0%, #c5a8d8 100%)",
+    href: "#/gallery",
+  },
+  {
     title: "Our Story",
     subtitle: "우리 이야기",
     emoji: "💗",
-    bg: "linear-gradient(135deg, #e8d8f0 0%, #c5a8d8 100%)",
+    bg: "linear-gradient(135deg, #ffeef3 0%, #ffc8d8 100%)",
     href: "#/story",
   },
+]
+
+const contactCards: Card[] = [
   {
-    title: "Contact",
-    subtitle: "연락처",
-    emoji: "📞",
-    bg: "linear-gradient(135deg, #ffeef3 0%, #ffc8d8 100%)",
+    title: "Contact Information",
+    subtitle: "연락처 · 마음 전하기 · 화환 안내",
+    emoji: "💌",
+    bg: "linear-gradient(135deg, #fde2dc 0%, #f4a5b8 100%)",
     href: "#/contact",
   },
 ]
@@ -71,7 +81,10 @@ const Section = ({ title, cards }: { title: string; cards: Card[] }) => {
   return (
     <section className="hub__section">
       <h2 className="hub__section-title">{title}</h2>
-      <div className="hub__scroller" ref={ref}>
+      <div
+        className={`hub__scroller${cards.length === 1 ? " hub__scroller--single" : ""}`}
+        ref={ref}
+      >
         {cards.map((card) => (
           <a
             key={card.href}
@@ -91,14 +104,16 @@ const Section = ({ title, cards }: { title: string; cards: Card[] }) => {
           </a>
         ))}
       </div>
-      <div className="hub__dots">
-        {cards.map((_, i) => (
-          <span
-            key={i}
-            className={`hub__dot${i === active ? " hub__dot--active" : ""}`}
-          />
-        ))}
-      </div>
+      {cards.length > 1 && (
+        <div className="hub__dots">
+          {cards.map((_, i) => (
+            <span
+              key={i}
+              className={`hub__dot${i === active ? " hub__dot--active" : ""}`}
+            />
+          ))}
+        </div>
+      )}
     </section>
   )
 }
@@ -129,6 +144,7 @@ export const Hub = () => {
 
       <Section title="Wedding Info" cards={weddingInfoCards} />
       <Section title="Bride & Groom" cards={peopleCards} />
+      <Section title="Contact Information" cards={contactCards} />
 
       <footer className="hub__footer">
         <p>with love</p>
