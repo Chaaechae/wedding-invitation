@@ -23,7 +23,6 @@ export const Landing = () => {
         <div className="envelope">
           <div className="envelope__flap" />
           <div className="envelope__card">
-            <p className="envelope__top script">our</p>
             <p className="envelope__title script">the new chapter</p>
             <span className="envelope__divider" />
             <p className="envelope__names">
